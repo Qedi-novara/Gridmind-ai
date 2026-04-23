@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GridMind</title>
+</head>
+
+<body>
+  <h1>GridMind Test</h1>
+
+  <button onclick="testAPI()">Test API</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    async function testAPI() {
+      const res = await fetch("/api/grid");
+      const data = await res.json();
+      document.getElementById("output").innerText =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
